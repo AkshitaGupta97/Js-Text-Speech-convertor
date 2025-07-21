@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #010758, #a83c4c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.hero h1 {
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+.hero #convert {
+    color: #f5255c;
+    border-bottom: 2px solid white;
+}
+textarea {
+    width: 600px;
+    height: 250px;
+    background: #9b97dc;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    border: 0;
+    outline: 0;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    padding: 10px;
+    resize: none;
+}
+textarea::placeholder {
+    color: white;
+}
+.row {
+    width: 600px; 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+button {
+    background-color: #ff2963;
+    color: white;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    display: flex;
+    gap: 4px;
+}
+
+select {
+    flex: 1;  /* share space equally*/
+    color: rgb(247, 204, 123);
+    background-color: #7873cf;
+    height: 30px;
+    appearance: none;  /* done this to hide the select tag*/
+    border: 0;
+    outline: 0;
+    padding: 0 20px;
+    border-radius: 30px;
+    background-image: url('https://img.icons8.com/?size=100&id=R52ioYgkCvz6&format=png&color=FFFFFF');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 20px);
+    background-position-y: 5px;
+    background-size: 20px;
+    z-index: 2;
+}
+
+@media (width <= 720px){
+    
+}

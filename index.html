@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    
+    <div class="hero">
+        <h1>Text to speech <span id="convert">converter</span></h1>
+
+        <textarea name="text" id="text-area" placeholder="Write anything here..."></textarea>
+
+       <div class="row">
+            <select></select>
+            <button> <i class="fa-solid fa-play"></i> Listen</button>
+       </div>
+    </div>
+
+    <script>
+        let speech = new SpeechSynthesisUtterance();   // it is part of webApi, that is used to create an utterance - a piecie of text that you want to speak aloud. 
+
+        let addVoice = [];
+
+        let voiceSelect = document.querySelector('select');
+
+        window.speechSynthesis.onvoiceschanged = () => {
+            addVoice = window.speechSynthesis.getVoices();
+            speech.voice = addVoice[0]; 
+
+            addVoice.forEach((voice, idx) => {
+                voiceSelect.options[idx] = new Option(voice.name, idx)
+            })
+        };
+
+        voiceSelect.addEventListener('change', () => {
+            speech.voice = addVoice[voiceSelect.value];
+        })
+
+        document.querySelector('button').addEventListener('click', () => {
+            speech.text = document.querySelector('textarea').value;
+
+            window.speechSynthesis.speak(speech);
+        })
+
+    </script>
+
+
 </body>
 </html>
