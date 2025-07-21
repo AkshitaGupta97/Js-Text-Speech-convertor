@@ -4,6 +4,9 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+body {
+    overflow-y: hidden;
+}
 
 .hero {
     width: 100%;
@@ -63,7 +66,8 @@ button {
 
 select {
     flex: 1;  /* share space equally*/
-    color: rgb(247, 204, 123);
+    color: white;
+    font-weight: 400;
     background-color: #7873cf;
     height: 30px;
     appearance: none;  /* done this to hide the select tag*/
@@ -80,5 +84,30 @@ select {
 }
 
 @media (width <= 720px){
-    
+    textarea {
+        width: 450px;     
+    }
+    .row {
+        flex-direction: column;
+    }
+    select {
+        width: 400px;
+        padding: 10px;
+        background-position-y: 7px;
+    }
 }
+
+@media (width <= 540px){
+    textarea {
+        width: 350px;     
+    }
+    .row {
+        flex-direction: column;
+    }
+    select {
+         width: 350px;
+        padding:10px 2px;
+        background-position-y: 7px;
+    }
+}
+
