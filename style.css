@@ -5,11 +5,14 @@
     box-sizing: border-box;
 }
 body {
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
+
+    touch-action: manipulation;  /*  this prevent pinch-zooming and double-tap zoom on mobile.*/
 }
 
 .hero {
-    width: 100%;
     min-height: 100vh;
     background: linear-gradient(45deg, #010758, #a83c4c);
     display: flex;
